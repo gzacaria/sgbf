@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio')->with('title', 'Inicio');
 });
+
+Route::resource('productos', 'ProductosController');
