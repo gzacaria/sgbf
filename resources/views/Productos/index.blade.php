@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
   <section class="content">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-12">
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="pull-left"><h3>Lista de Productos</h3></div>
@@ -21,12 +21,15 @@
                <th>Observaciones</th>
                <th>Tipo</th>
                <th>Ubicación</th>
+               <th>Cantidad Actual</th>
+               <th>Cantidad Mínima</th>
                <th>Editar</th>
                <th>Eliminar</th>
              </thead>
              <tbody>
               @if($productos->count())  
               @foreach($productos as $producto)
+              @foreach($stocks as $stock)
               @foreach($tipos as $tipo)
               @foreach($ubicaciones as $ubicacion)  
               <tr>
@@ -37,6 +40,8 @@
                 <td>{{$producto->observaciones}}</td>
                 <td>{{$tipo->descripcion}}</td>
                 <td>Estante {{$ubicacion->estante}} Fila {{$ubicacion->fila}}</td>
+                <td>{{$stock->cantidad_actual}}</td>
+                <td>{{$stock->cantidad_minima}}</td>
                 <td><a class="btn btn-primary btn-xs" href="{{action('ProductosController@edit', $producto->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
                 <td>
                   <form action="{{action('ProductosController@destroy', $producto->id)}}" method="post">
@@ -48,6 +53,7 @@
                </tr>
                @endforeach
                @endforeach
+               @endforeach
                @endforeach 
                @else
                <tr>
@@ -55,7 +61,6 @@
               </tr>
               @endif
             </tbody>
-
           </table>
         </div>
       </div>

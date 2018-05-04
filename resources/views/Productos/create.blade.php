@@ -56,6 +56,19 @@
 								</div>
 							</div>
 
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="form-group">
+										<input type="text" name="cantidad_actual" id="cantidad_actual" class="form-control input-sm" placeholder="Cantidad Actual" numbersonly>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="form-group">
+										<input type="text" name="cantidad_minima" id="cantidad_minima" class="form-control input-sm" placeholder="Cantidad Mínima" numbersonly>
+									</div>
+								</div>
+							</div>
+
 							<div class="form-group">
 								<textarea name="observaciones" class="form-control input-sm" placeholder="Observaciones"></textarea>
 							</div>
