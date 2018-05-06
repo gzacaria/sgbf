@@ -14,6 +14,7 @@ class CreateProductosUbicacionTable extends Migration
     public function up()
     {
         Schema::create('productos_ubicacion', function (Blueprint $table) {
+            $table->engine = ('InnoDB');
             $table->increments('id');
             $table->string('estante');
             $table->string('fila');

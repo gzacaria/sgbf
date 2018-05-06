@@ -14,6 +14,7 @@ class CreateStockTable extends Migration
     public function up()
     {
         Schema::create('stock', function (Blueprint $table) {
+            $table->engine = ('InnoDB');
             $table->increments('id');
             $table->integer('cantidad_actual');
             $table->integer('cantidad_minima');
